@@ -1,0 +1,22 @@
+{
+  "name": "project",
+  "version": "0.0.0",
+  "description": "A project page for GeekPlux",
+  "repository": {
+    "url": "geekplux/project",
+    "type": "git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "dev": "poi",
+    "build": "poi build",
+    "deploy": "npm run build && gh-pages -d dist",
+    "test": "echo 'no tests!' && npm run deploy"
+  },
+  "author": "geekplux <geekplux@gmail.com> (https://geekplux.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "poi": "^8.0.0",
+    "gh-pages": "^0.12.0"
+  }
+}
