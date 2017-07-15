@@ -14,7 +14,14 @@
         <li><a href="https://donate.geekplux.com">Donate</a></li>
       </ul>
       <div class="projects">
-        <div class="project panel">
+        <div class="project panel" v-for="p in projects">
+          <h3 class="project-title">{{p.title}}</h3>
+          <p class="project-bio">{{p.bio}}</p>
+          <div class="project-badges">
+          </div>
+          <div class="project-image">
+            <img alt="" :src="p.img"/>
+          </div>
         </div>
       </div>
     </div>
@@ -24,6 +31,17 @@
 <script>
   export default {
     name: 'app',
+    data() {
+      return {
+        projects: [
+          {
+            title: 'markvis',
+            bio: 'make visualization in markdown',
+            img: './markvis-preview.png'
+          }
+        ]
+      }
+    }
   }
 </script>
 
