@@ -17,10 +17,10 @@
         <div class="project panel" v-for="p in projects">
           <h3 class="project-title title">{{p.title}}</h3>
           <p class="project-bio">{{p.bio}}</p>
-          <a class="project-link" :href="p.link">{{p.link}}</a>
+          <a v-if="p.link" class="project-link" :href="p.link">{{p.link}}</a>
           <div class="project-badges">
           </div>
-          <div class="project-image">
+          <div v-if="p.img" class="project-image">
             <img alt="" :src="p.img"/>
           </div>
         </div>
@@ -54,6 +54,10 @@
             bio: 'Basic 2D visualization in Unity',
             img: './unity-preview.png',
             link: 'https://github.com/geekplux/Basic-Visualization-in-Unity'
+          }, {
+            title: 'markdown-it-fence',
+            bio: 'fence customize plugin for markdown-it',
+            link: 'https://github.com/geekplux/markdown-it-fence'
           }]
       }
     }
@@ -149,6 +153,7 @@
     color: #000;
     font-style: italic;
     text-decoration: none;
+    transition: .5s;
   }
 
   .project-badges {
@@ -157,6 +162,7 @@
   }
 
   .project-image img {
+    margin-top: 5px;
     width: 100%;
   }
 </style>
